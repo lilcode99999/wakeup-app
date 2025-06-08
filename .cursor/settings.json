@@ -1,0 +1,18 @@
+{
+  "cursor.ai.enabled": true,
+  "cursor.ai.model": "claude-3.5-sonnet",
+  "cursor.ai.temperature": 0.2,
+  "cursor.ai.contextFiles": [
+    "docs/PROJECT_OVERVIEW.md",
+    "docs/ARCHITECTURE.md",
+    "docs/FEATURES.md",
+    "docs/API_SPEC.md",
+    "frontend/src/types/index.ts"
+  ],
+  "typescript.preferences.importModuleSpecifier": "relative",
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+    "source.organizeImports": true
+  }
+}
