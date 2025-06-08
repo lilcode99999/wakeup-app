@@ -1,0 +1,84 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+---
+description: "Guidelines for creating React Native components with TypeScript"
+globs:
+  - "frontend/src/components/**/*.tsx"
+  - "frontend/src/screens/**/*.tsx"
+  - "frontend/App.tsx"
+alwaysApply: false
+---
+
+# React Native Component Guidelines
+
+Always follow this structure for React Native components:
+
+```typescript
+import React, { useState, useCallback } from 'react';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+
+interface Props {
+  title: string;
+  onPress: () => void;
+  disabled?: boolean;
+}
+
+export const ComponentName: React.FC<Props> = ({ 
+  title, 
+  onPress, 
+  disabled = false 
+}) => {
+  const [loading, setLoading] = useState(false);
+
+  const handlePress = useCallback(() => {
+    if (!disabled && !loading) {
+      onPress();
+    }
+  }, [disabled, loading, onPress]);
+
+  return (
+    <View style={styles.container}>
+      <Text style={styles.title}>{title}</Text>
+      <TouchableOpacity 
+        style={[styles.button, disabled && styles.disabled]}
+        onPress={handlePress}
+        disabled={disabled || loading}
+      >
+        <Text style={styles.buttonText}>
+          {loading ? 'Loading...' : 'Press Me'}
+        </Text>
+      </TouchableOpacity>
+    </View>
+  );
+};
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    padding: 16,
+  },
+  title: {
+    fontSize: 18,
+    fontWeight: '600',
+    marginBottom: 12,
+    color: '#2d3748',
+  },
+  button: {
+    backgroundColor: '#667eea',
+    borderRadius: 8,
+    paddingVertical: 12,
+    paddingHorizontal: 16,
+    alignItems: 'center',
+  },
+  buttonText: {
+    color: 'white',
+    fontSize: 16,
+    fontWeight: '600',
+  },
+  disabled: {
+    opacity: 0.6,
+  },
+});

@@ -1,0 +1,49 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+```yaml
+---
+description: "Project-specific context for WakeUp app development"
+alwaysApply: true
+---
+
+# WakeUp App Context
+
+## Project Overview
+WakeUp is a science-backed morning routine app that helps users start their day with cognitive exercises and day preparation.
+
+## Tech Stack
+- Frontend: React Native (Expo) with TypeScript
+- Backend: Node.js + Express + TypeScript (coming later)
+- State: Zustand for global state management
+- Navigation: React Navigation v6
+
+## Key Features
+### Free Tier
+- Smart alarm with cognitive unlock
+- 5 exercise types: Math, Memory, Breathing, Word, Pattern
+- Basic day preview (weather + calendar)
+- Progress tracking with streaks
+
+### Premium Tier ($4.99/month)
+- Advanced exercise library
+- Full calendar integration
+- Detailed analytics
+- Custom routine builder
+
+## Color Scheme
+Primary: '#667eea' (purple-blue)
+Secondary: '#764ba2' (purple)
+Success: '#48bb78' (green)
+Text Primary: '#2d3748' (dark gray)
+Text Secondary: '#718096' (medium gray)
+Background: '#f8fafc' (light gray)
+
+## Current Status
+- ✅ Project structure created
+- ✅ GitHub repository connected
+- ✅ Expo frontend initialized
+- 🔄 Building first screens
+- ⏳ Backend development pending
